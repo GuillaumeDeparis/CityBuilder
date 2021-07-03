@@ -1,0 +1,17 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/land1a_00003.png-df76bba9d3eca5ebad59f305c0b3a2bc.res"
+group_file="res://Resources/atlases/landStub.png"
+valid=true
+[deps]
+
+
+source_file="res://Resources/land1a/land1a_00003.png"
+dest_files=[ "res://.import/land1a_00003.png-df76bba9d3eca5ebad59f305c0b3a2bc.res" ]
+
+[params]
+
+atlas_file="res://Resources/atlases/landStub.png"
+import_mode=0
