@@ -30,6 +30,10 @@ config/name="Brutus"
 run/main_scene="res://RoadMap.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+RoadMap="*res://RoadMap.tscn"
+
 [importer_defaults]
 
 texture_atlas={

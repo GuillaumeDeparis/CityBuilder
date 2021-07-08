@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/17.png-07d73070cc824b9a1103ae96c02e91c9.stex"
+path="res://.import/org_land_00002.png-1c43cee4fe8dca7bc8af5f306c2ef053.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/landTest/17.png"
-dest_files=[ "res://.import/17.png-07d73070cc824b9a1103ae96c02e91c9.stex" ]
+source_file="res://Resources/misc/org_land_00002.png"
+dest_files=[ "res://.import/org_land_00002.png-1c43cee4fe8dca7bc8af5f306c2ef053.stex" ]
 
 [params]
 
@@ -19,10 +19,10 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=true
+flags/repeat=0
+flags/filter=false
 flags/mipmaps=false
-flags/anisotropic=true
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
@@ -31,4 +31,4 @@ process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=0.5
+svg/scale=2.0
