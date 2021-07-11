@@ -1,21 +1,27 @@
 extends Node2D
 
+signal updateMousePosition
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 onready var GroundMap = $GroundMap
 onready var RoadMap = $RoadMap
+onready var OrgMap = $OrgMap
 
 var dragging = false
 
 
 var startTile: Vector2
 var endTile: Vector2
+var arrayRoad = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	initMap()
-	pass # Replace with function body.
+	pass
+
+var tile_back = null
+var tile_selected: int = 0
 
 
 var distance = []
@@ -40,23 +46,30 @@ func _input(event):
 	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if not dragging and event.pressed:
 			dragging = true
-			startTile = GroundMap.world_to_map(pos)
-			endTile = GroundMap.world_to_map(pos)
-			getDistanceStartToEnd(startTile, endTile)
 		if dragging and not event.pressed:
 			dragging = false
+	elif event is InputEventMouseMotion:
+		var current_tile = RoadMap.world_to_map(pos)
+		RoadMap.set_cellv(current_tile, tile_selected)
+		if tile_back == null:
+			tile_back = current_tile
+		if tile_back != current_tile:
+			RoadMap.set_cell(tile_back.x, tile_back.y, -1)
+			tile_back = current_tile
 	elif event is InputEventMouseMotion and dragging:
-		endTile = GroundMap.world_to_map(pos)
+#		clearPath()
+		if !arrayRoad.has(GroundMap.world_to_map(pos)):
+			endTile = GroundMap.world_to_map(pos)
+#		construct_road(GroundMap.world_to_map(pos))
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
 
-var tileList = []
-var Neighbor = load("Neighbor.gd")
-var _Node = load("PathFinding_node.gd")
-func initMap():
-	#pour chaque tile, créer une instance de PathFinding_Node
-	for tile in GroundMap.get_used_cells():
-		tileList.push_back(_Node.new(tile.x, tile.y, true))
-		
+func _on_Control_updateButton(asset):
+	if asset == "house":
+		tile_selected = 1
+	elif asset == "road":
+		tile_selected = 2
+	print(asset)
 	
-func getDistanceStartToEnd(startPos, endPos):
-	distance[startPos.x][startPos.y] = Neighbor.new()
-	print(distance[startPos.x][startPos.y][West])
+
