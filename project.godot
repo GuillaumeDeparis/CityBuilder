@@ -18,16 +18,28 @@ _global_script_classes=[ {
 "class": "UnitPath",
 "language": "GDScript",
 "path": "res://UnitPath.gd"
+}, {
+"base": "Reference",
+"class": "_AStar",
+"language": "GDScript",
+"path": "res://_AStar.gd"
+}, {
+"base": "Node",
+"class": "_Node",
+"language": "GDScript",
+"path": "res://_Node.gd"
 } ]
 _global_script_class_icons={
 "PathFinder": "",
-"UnitPath": ""
+"UnitPath": "",
+"_AStar": "",
+"_Node": ""
 }
 
 [application]
 
 config/name="Brutus"
-run/main_scene="res://RoadMap.tscn"
+run/main_scene="res://Astart.tscn"
 config/icon="res://icon.png"
 
 [autoload]
